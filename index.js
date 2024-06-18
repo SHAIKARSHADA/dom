@@ -1,5 +1,5 @@
 
-async function calculateSum() {
+async function calculatePRI() {
   const a = document.getElementById("one").value;
   const b = document.getElementById("two").value;
   const element = document.getElementById("finalSum")
