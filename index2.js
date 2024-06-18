@@ -8,6 +8,6 @@ async function calculatePRI() {
   console.log(res);
   const ans = await res.json();
   document.getElementById("finalSum").innerText= "Total: "+ ans.total;
-  document.getElementById("finalSum2").innerText= "Total: "+ ans.rate;
+  document.getElementById("finalSum2").innerText= "Interest: "+ ans.interest;
   
 }
