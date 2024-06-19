@@ -1,3 +1,12 @@
+let timeout;
+function debouncingcalculatePRI() {
+  clearTimeout(timeout);
+  setTimeout(() => {
+    calculatePRI();
+  },100)
+}
+
+
 async function calculatePRI() {
   const p = document.getElementById("principal").value;
   const r = document.getElementById("rate").value;
