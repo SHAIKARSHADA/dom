@@ -39,5 +39,5 @@ function updateDomAccToState(state) {
 window.setInterval(async function() {
   const res = await fetch("https://sum-server.100xdevs.com/todos")
   const json = await res.json();
-  updateDomAccToState(json)
+  updateDomAccToState(json.todos)
 },5000)
