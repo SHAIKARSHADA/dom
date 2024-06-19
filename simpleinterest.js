@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.get("/simpleInterest/?p=1000&r=5&t=10",(res, req) => {
+app.get("/simpleInterest",(req, res) => {
   const p = parseInt(req.query.p);
   const t = parseInt(req.query.t);
   const r = parseInt(req.query.r);
