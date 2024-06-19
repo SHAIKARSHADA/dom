@@ -13,7 +13,7 @@ async function calculatePRI() {
   const t = document.getElementById("time").value;
 
 
-  const res = await fetch("localhost:3000interest?principal="+p+"&rate="+r+"&time="+t);
+  const res = await fetch("http://localhost:3000/simpleInterest?p="+p+"&r="+r+"&t="+t);
   console.log(res);
   const ans = await res.json();
   document.getElementById("finalSum").innerText= "Total: "+ ans.total;
