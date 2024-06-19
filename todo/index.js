@@ -17,16 +17,22 @@ function createChild(title, description, id) {
   return child;
 }
 
-function addTodo() {
-  
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
+
+function updateDomAccToState(state) {
   const parent = document.getElementById("container");
-  parent.appendChild(createChild(title,description,globalId++))
- 
+  parent.innerHTML = "";
+  for(let i = 0; i<state.length; i++) {
+    const child = createChild(state[i].title,state[i].description,state[i].id);
+    parent.appendChild;
+  }
 }
 
-function markAsDone(id) {
-  const parent = document.getElementById(id);
-  parent.children[2].innerHTML = "Done!";
-}
+updateDomAccToState({
+  title: "go to gym",
+  description: "go to gym from 5-7",
+  id: 1,
+},{
+title: "go to gym",
+description: "go to gym from 5-7",
+id: 1,
+})
