@@ -6,10 +6,11 @@
   <title>Document</title>
 </head>
 <body>
-  <input input="text" placeholder="Principal" id="principal"> <br><br>
-  <input input="text" placeholder="Time" id="time"> <br><br>
-  <input input="text" placeholder="Rate Of Interest" id="rate"> <br><br>
-  <button onClick="calculatePRI()">Calculate Simple Interest</button> <br><br>
+  <input input="text" placeholder="Principal" id="principal" oninput="debouncingcalculatePRI()"> <br><br>
+  <input input="text" placeholder="Time" id="time" 
+  oninput="debouncingcalculatePRI()"> <br><br>
+  <input input="text" placeholder="Rate Of Interest" id="rate" 
+  oninput="debouncingcalculatePRI()"> <br><br>
   <div id="finalSum"></div> <br><br>
   <div id="finalSum2"></div>
   <script src="index2.js"></script>
