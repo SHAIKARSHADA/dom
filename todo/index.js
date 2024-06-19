@@ -1,4 +1,3 @@
-let globalId;
 
 function createChild(title, description, id) {
   const child = document.createElement("div");
@@ -8,7 +7,7 @@ function createChild(title, description, id) {
   grandchildtwo.innerHTML = description;
   const grandchildthree = document.createElement("button");
   grandchildthree.innerHTML = "Mark as done";
-  grandchildthree.setAttribute("onclick",`markAsDone(${globalId})`);
+  grandchildthree.setAttribute("onclick",`markAsDone(${id})`);
   child.appendChild(grandchildOne);
   child.appendChild(grandchildtwo);
   child.appendChild(grandchildthree);
@@ -22,17 +21,23 @@ function updateDomAccToState(state) {
   const parent = document.getElementById("container");
   parent.innerHTML = "";
   for(let i = 0; i<state.length; i++) {
-    const child = createChild(state[i].title,state[i].description,state[i].id);
-    parent.appendChild;
+    const child = createChild(state[i].title, state[i].description, state[i].id);
+    parent.appendChild(child);
   }
 }
 
-updateDomAccToState({
-  title: "go to gym",
-  description: "go to gym from 5-7",
-  id: 1,
-},{
-title: "go to gym",
-description: "go to gym from 5-7",
-id: 1,
-})
+// updateDomAccToState([{
+//   title: "go to gym",
+//   description: "go to gym from 5-7",
+//   id: 1,
+// },{
+// title: "go to gym",
+// description: "go to gym from 5-7",
+// id: 1,
+// }])
+
+window.setInterval(async function() {
+  const res = await fetch("https://sum-server.100xdevs.com/todos")
+  const json = await res.json();
+  updateDomAccToState(json)
+},5000)
